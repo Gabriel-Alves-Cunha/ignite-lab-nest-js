@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "declaration": true,
+    "incremental": true,
+    "target": "es2017",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "baseUrl": "./",
+    "strict": true,
+  },
+}
