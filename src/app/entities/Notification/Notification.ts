@@ -8,13 +8,21 @@ export class Notification {
 	#props: NotificationProps;
 	#id: string;
 
-	constructor(props: Replace<NotificationProps, { createdAt?: Date }>) {
-		this.#id = randomUUID();
+	constructor(
+		props: Replace<NotificationProps, { createdAt?: Date }>,
+		id?: string,
+	) {
+		this.#id = id ?? randomUUID();
 		this.#props = {
 			...props,
 			createdAt: props.createdAt ?? new Date(),
 		};
 	}
+
+	//////////////////////////////////////////////
+	//////////////////////////////////////////////
+	//////////////////////////////////////////////
+	// Getters and setters
 
 	get id() {
 		return this.#id;
@@ -44,10 +52,6 @@ export class Notification {
 		return this.#props.category;
 	}
 
-	set readAt(readAt: Date | null | undefined) {
-		this.#props.readAt = readAt;
-	}
-
 	get readAt() {
 		return this.#props.readAt;
 	}
@@ -55,9 +59,30 @@ export class Notification {
 	get createdAt() {
 		return this.#props.createdAt;
 	}
+
+	get canceledAt() {
+		return this.#props.canceledAt;
+	}
+
+	//////////////////////////////////////////////
+	//////////////////////////////////////////////
+	//////////////////////////////////////////////
+
+	cancel() {
+		this.#props.canceledAt = new Date();
+	}
+
+	read() {
+		this.#props.readAt = new Date();
+	}
+
+	unread() {
+		this.#props.readAt = undefined;
+	}
 }
 
 export type NotificationProps = {
+	canceledAt?: Date | null;
 	readAt?: Date | null;
 	recipientId: string;
 	category: string;

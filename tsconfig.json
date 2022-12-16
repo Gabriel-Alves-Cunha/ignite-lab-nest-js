@@ -7,6 +7,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictBindCallApply": true,
+    "resolveJsonModule": true,
     "strictNullChecks": true,
     "removeComments": true,
     "noImplicitAny": true,
@@ -19,5 +20,19 @@
     "sourceMap": true,
     "baseUrl": "./",
     "strict": true,
+    "paths": {
+      "@helpers/*": [
+        "src/helpers/*"
+      ],
+      "@infra/*": [
+        "src/infra/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@test/*": [
+        "test/*"
+      ]
+    }
   },
 }
